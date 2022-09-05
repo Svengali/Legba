@@ -10,3 +10,24 @@
 [submodule "src/libs/Ceras"]
 	path = src/libs/Ceras
 	url = git@github.com:Svengali/Ceras.git
+[submodule "src/libs/capnproto-dotnetcore"]
+	path = src/libs/capnproto-dotnetcore
+	url = git@github.com:Svengali/capnproto-dotnetcore.git
+[submodule "src/libs/Terminal.Gui"]
+	path = src/libs/Terminal.Gui
+	url = git@github.com:Svengali/Terminal.Gui.git
+[submodule "src/libs/IronScheme"]
+	path = src/libs/IronScheme
+	url = git@github.com:Svengali/IronScheme.git
+[submodule "src/libs/xenko"]
+	path = src/libs/xenko
+	url = git@github.com:Svengali/xenko.git
+[submodule "src/libs/SharpGames"]
+	path = src/libs/SharpGames
+	url = git@github.com:Svengali/SharpGames.git
+[submodule "src/apps/DerelictLib"]
+	path = src/apps/DerelictLib
+	url = git@github.com:Svengali/DerelictLib.git
+[submodule "src/apps/DerelictServer"]
+	path = src/apps/DerelictServer
+	url = git@github.com:Svengali/DerelictServer.git
