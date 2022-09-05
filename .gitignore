@@ -1,5 +1,6 @@
 
 src/apps/Server.Old/
+src/apps/TestService/
 
 ## Project Specific settings
 run/server/logs/
