@@ -2,6 +2,8 @@
 src/apps/Server.Old/
 src/apps/TestService/
 
+*.nogit.*
+
 ## Project Specific settings
 run/server/logs/
 run/server/save/
