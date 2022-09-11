@@ -31,3 +31,6 @@
 [submodule "src/apps/DerelictServer"]
 	path = src/apps/DerelictServer
 	url = git@github.com:Svengali/DerelictServer.git
+[submodule "src/libs/immudb4dotnet"]
+	path = src/libs/immudb4dotnet
+	url = git@github.com:Svengali/immudb4dotnet.git
