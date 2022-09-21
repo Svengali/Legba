@@ -34,3 +34,6 @@
 [submodule "src/libs/immudb4dotnet"]
 	path = src/libs/immudb4dotnet
 	url = git@github.com:Svengali/immudb4dotnet.git
+[submodule "src/libs/FluentResults"]
+	path = src/libs/FluentResults
+	url = git@github.com:Svengali/FluentResults.git
