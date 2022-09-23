@@ -37,3 +37,6 @@
 [submodule "src/libs/FluentResults"]
 	path = src/libs/FluentResults
 	url = git@github.com:Svengali/FluentResults.git
+[submodule "src/libs/Avalonia"]
+	path = src/libs/Avalonia
+	url = git@github.com:Svengali/Avalonia.git
