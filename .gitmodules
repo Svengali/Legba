@@ -40,3 +40,6 @@
 [submodule "src/libs/Avalonia"]
 	path = src/libs/Avalonia
 	url = git@github.com:Svengali/Avalonia.git
+[submodule "src/apps/Randland"]
+	path = src/apps/Randland
+	url = git@github.com:Svengali/Randland.git
