@@ -18,7 +18,7 @@ public static class Landscape
 
 	static public float ContinentsMap( g3.Vector2f pos )
 	{
-		var pos3 = new g3.Vector3f( pos.x, pos.y, 0.5f );
+		var pos3 = new g3.Vector3f( pos.x, pos.y, 0.58f );
 
 		var vPerlin = 10.0f * rl.Perlin.Fbm( cTrans3 + pos3 * continentScale, ( p ) => 2.2f, ( p ) => 0.65f, ( p ) => 3.0f );
 
@@ -30,7 +30,7 @@ public static class Landscape
 
 		var v8 = v4 * v4;
 
-		return vPerlin - 1.0f;
+		return vPerlin - 1.75f;
 	}
 
 
