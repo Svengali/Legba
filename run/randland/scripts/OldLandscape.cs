@@ -2,13 +2,13 @@ using System;
 using System.Diagnostics;
 
 
-public static class Landscape
+public static class Landscape_Old
 {
 	static math.Vec2 cNeatLargeMap = new math.Vec2( 4.0f, 4.0f );
 
 
 	static float continentScale = 0.5f;
-	static math.Vec2 cTrans  = new math.Vec2( 6.0f, 6.0f );
+	static math.Vec2 cTrans  = new math.Vec2( 4.0f, 4.0f );
 	static math.Vec3 cTrans3 = new math.Vec3( cTrans.X, cTrans.Y, 0.0f );
 
 	static math.Vec3 cHillAdjust = cTrans3 + new math.Vec3( 22.0f, 22.0f, 0.0f );
@@ -31,9 +31,22 @@ public static class Landscape
 
 		var octaveClamp = math.fn.Clamp( octaves, 0, 1 );
 
+		var sign = Math.Sign(octaveClamp);
+
+		var squared = sign * octaveClamp * octaveClamp;
+
 		var continentMask = math.fn.SmoothStepCube( math.fn.SmoothStepCube( math.fn.SmoothStepCube( octaveClamp ) ) );
 
+
+		var oldHills = 1.3f * ContinentalPerlin( pos3Oct * 20.0f, 1.0f ) + 0.40f;
+
 		var largeChunks = 1.3f * ContinentalPerlin( pos3 * 0.5f + cHillAdjust, 3.0f ) + 0.45f;
+
+		var largeChunksSqrtSqrt = (float)math.fn.SmoothStepCube( math.fn.SmoothStepCube( largeChunks ) );
+
+		//var occasionalHills = oldHills * largeChunksSqrtSqrt;
+
+		var largeChunksSqr = largeChunks * largeChunks * largeChunks * largeChunks;
 
 		var maskedlargeChunks = largeChunks * continentMask;
 
@@ -42,7 +55,7 @@ public static class Landscape
 
 		//var octavesClamp = math.fn.Clamp( octaves, 0, 1 );
 
-		var variableOctaves = maskedlargeChunks * 6 + 4;
+		var variableOctaves = maskedlargeChunks * 4 + 4;
 
 		var vPerlin = 1.5f * ContinentalPerlin( pos3, variableOctaves ) + 0.37f;
 
@@ -51,11 +64,15 @@ public static class Landscape
 
 		var flat_1_centered = 0.24f + flat_1 * (1.0f / 2.0f);
 
-		var flat_1_clamp = math.fn.Clamp( flat_1_centered, 0, 5 );
+		var flat_1_land = (flat_1 - 0.5f) * 2.0f;
 
-		var flat_1_flatter = flat_1 < 0.5f ? 
-			flat_1 : 
-			0.5f + Math.Min( flat_1_clamp * flat_1_clamp, (float)Math.Log10( flat_1_clamp * 1.7f + 0.135f ) );
+		var flat_1_flatter = flat_1 < 0.5f ? flat_1 : 0.5f + Math.Min( flat_1_land * flat_1_land, (float)Math.Log10( flat_1_land * 6.7f + 1.0f ) );
+
+		var flat_2 = 0.04f + math.fn.PerlinToContinent( flat_1_centered );
+
+
+		//var continentHills = flat_1_flatter + continentalMaskedHills;
+
 
 		return flat_1_flatter;
 	}
