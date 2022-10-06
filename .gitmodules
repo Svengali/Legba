@@ -43,3 +43,9 @@
 [submodule "src/apps/Randland"]
 	path = src/apps/Randland
 	url = git@github.com:Svengali/Randland.git
+[submodule "src/libs/veldrid"]
+	path = src/libs/veldrid
+	url = git@github.com:Svengali/veldrid.git
+[submodule "src/apps/Client"]
+	path = src/apps/Client
+	url = git@github.com:Svengali/Client.git
