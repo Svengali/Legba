@@ -49,3 +49,6 @@
 [submodule "src/apps/Client"]
 	path = src/apps/Client
 	url = git@github.com:Svengali/Client.git
+[submodule "src/libs/veldrid-spirv"]
+	path = src/libs/veldrid-spirv
+	url = git@github.com:Svengali/veldrid-spirv.git

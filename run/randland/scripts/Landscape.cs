@@ -27,9 +27,11 @@ public static class Landscape
 		var pos3Oct = new math.Vec3( pos3.X, pos3.Y, MapZBase + 0.1f );
 
 
-		var octaves = 1.5f * ContinentalPerlin( pos3Oct, 3.0f ) + 0.30f;
+		var octaves = 1.15f * ContinentalPerlin( pos3Oct, 3.0f ) + 0.50f;
 
-		var octaveClamp = math.fn.Clamp( octaves, 0, 1 );
+		var octCont = math.fn.PerlinToContinent( octaves );
+
+		var octaveClamp = math.fn.Clamp( octCont, 0, 1 );
 
 		var continentMask = math.fn.SmoothStepCube( math.fn.SmoothStepCube( math.fn.SmoothStepCube( octaveClamp ) ) );
 
